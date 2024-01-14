@@ -1,57 +1,27 @@
 <script setup>
+import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
+    <TheWelcome/>
   <main>
 
-    <div class="container-fluid">
-      <div class=" row">
-        <div class="col">
-          <img src="../assets/img1.png" alt="" width="396px" height="75px">
-        </div>
-        <div class="col d-flex align-items-center justify-content-end">
-          <img src="../assets/normal_u38.png" alt="" width="241px" height="78px">
-        </div>
+    <div class="container-lg fondo">
+      <div class="row">
+        <tr>
+          <h1>
+            ¡Buenos días, María!
+          </h1>
+        </tr>
+        <tr>
+          <h2>
+            Estos son los últimos viajes con nosotros ¿Quieres repetir alguno?
+          </h2>
+        </tr>
       </div>
-    </div>
-    <div class="container-fluid">
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" width="1365px">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../assets/normal_u1.jpg" class="d-block w-100" alt="..." width="1365px" height="560px">
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/normal_u7.jpg" class="d-block w-100" alt="..." width="1365px" height="560px">
-          </div>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="container-fluid fondo">
-      <tr>
-        <h1>
-          ¡Buenos días, María!
-        </h1>
-      </tr>
-      <tr>
-        <h2>
-          Estos son los últimos viajes con nosotros ¿Quieres repetir alguno?
-        </h2>
-      </tr>
 
       <div class="container-fluid mi-container">
-        <div class="row">
+        <div class="row seccion-clara">
           <div class="col-8 justify-content-center align-items-center">
             <!-- Tabla -->
             <table class="table justify-content-center align-items-center">
@@ -102,49 +72,54 @@
               </tbody>
             </table>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <div class="row justify-content-center align-items-center">
-              <button type="button" class="btn btn-cerrar-sesion">Cerrar Sesión</button>
+              <button type="button" class="btn btn-light btn-cerrar-sesion">Cerrar Sesión</button>
             </div>
 
             <div class="row justify-content-center align-items-center">
-              <button type="button" class="btn btn-reservar-oferta">Reservar la Oferta del Día</button>
+                <button type="button" class="btn btn-info">
+                  Reservar la Oferta del Día
+                </button>
             </div>
 
           </div>
           <div class="row justify-content-center align-items-center">
             <div class="col justify-content-right align-items-right">
-              <button type="button" class="btn btn-cerrar-sesion">Quiero buscar otras ofertas o destinos</button>
+              <button type="button" class="btn btn-cerrar-sesion btn-light">Quiero buscar otras ofertas o destinos</button>
             </div>
             <div class="col align-items-center justify-content-end">
-              <button type="button" class="btn btn-reservar-oferta">¡Hazme una oferta de lo que QUIERO REPETIR!</button>
+              <button type="button" class="btn btn-info btn-reservar-oferta">
+                ¡Hazme una oferta de lo que QUIERO REPETIR!
+              </button>
             </div>
-
-
-
           </div>
-
         </div>
       </div>
-    </div>
-    <div class="container-fluid justify-content-center align-items-center">
-      <div class="row">
-        <div class="col-6 justify-content-center align-items-center">
 
-          <p>
-            Inicio &nbsp;&nbsp;&nbsp;&nbsp;> &nbsp;&nbsp;&nbsp;&nbsp;Oferta &nbsp;&nbsp;&nbsp;&nbsp; >
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong>Portal del usuario</strong>
-          </p>
-
-
+      <footer>
+        <div class="row">
+          <div class="col-12 col-md-4 text-left">
+            Inicio &nbsp; > &nbsp; Oferta &nbsp; > &nbsp; <strong>Portal del usuario</strong> 
+            <!--
+            <ul>
+              <li>Inicio</li>
+              <li> > </li>
+              <li>Oferta</li>
+              <li> > </li>
+              <li>Portal del usuario</li>
+            </ul>
+            -->
+          </div>
+          <div class="col-12 col-md-8 text-end">
+            <ul>
+              <li>Condiciones</li>
+              <li>Quiénes somos</li>
+              <li>Política de protección de datos</li>
+            </ul>
+          </div>
         </div>
-        <div class="col text-right">
-          <p>
-            Condiciones &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Quiénes somos &nbsp;&nbsp;&nbsp;&nbsp; Política
-            de Protección de datos
-          </p>
-        </div>
-      </div>
+      </footer>
     </div>
   </main>
 </template>

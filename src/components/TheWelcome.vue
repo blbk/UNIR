@@ -8,6 +8,7 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
+  <!-- Cabecera con los logos de la web y carrusel de fotos -->
     <div id="principal" class="container-xl">
       <div class="row align-items-center">
         <div class="col-6">
@@ -47,6 +48,7 @@ import SupportIcon from './icons/IconSupport.vue'
 </template>
 
 <style>
+  /* Hojas de estilos para la web */
   body {
     background-color: #253347;
     color: white;

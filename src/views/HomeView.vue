@@ -61,10 +61,10 @@ import TheWelcome from '../components/TheWelcome.vue'
       </div>
       <footer>
         <div class="row">
-          <div class="col-2">
+          <div class="col-3">
             Inicio
           </div>
-          <div class="col-10 text-end">
+          <div class="col-9 text-end">
             <ul>
               <li>Condiciones</li>
               <li>Quiénes somos</li>
