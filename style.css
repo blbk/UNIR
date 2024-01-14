@@ -24,15 +24,15 @@ body{
     
 }
 .btn-reservar-oferta {
-    width: 350px;
-    height: 65px;
+    max-width: 200px;
+    /*height: 65px;
     border: 1px solid;
     border-bottom: 20px;
     background-color: #007bff;
     color: #fff;
     font-size: 19px;
     font-family: "montserrat";
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
   }
 
 p{
