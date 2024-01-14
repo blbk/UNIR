@@ -45,104 +45,172 @@
 </template>
 
 <style>
-
-#principal {
-  margin-top: 3rem;
+.item {
+  margin-top: 2rem;
+  display: flex;
+  position: relative;
 }
 
-body {
-  background-color: #253347;
-  color: white;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+.details {
+  flex: 1;
+  margin-left: 1rem;
 }
 
-.row {
-  padding: 0px;
-  margin: 10px 0;
+i {
+  display: flex;
+  place-items: center;
+  place-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text);
 }
 
-.carousel-item {
-  max-height: 40vh;
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--color-heading);
 }
 
-.foto-carrusel {
-  width: 100%;
-}
+@media (min-width: 1024px) {
+  .item {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
 
-.formulario-viaje-inicio {
-  background-color: #F2F2F2;
-  padding: 1em 0;
-  font-size: 14px;
-  margin: 2em 0;
-}
+  i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
 
-.formulario-viaje-inicio h1 {
-  font-size: 24px;
-  font-weight: bold;
-}
+  .item:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
 
-.formulario-viaje-inicio label {
-  font-size: 18px;
-  font-weight: bold;
-}
+  .item:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
 
-.formulario-origen-destino {
-  border: solid 2px #1E98D7;
-}
+  .item:first-of-type:before {
+    display: none;
+  }
 
-.formulario-origen-destino select {
-  width: 90%;
-}
+  .item:last-of-type:after {
+    display: none;
+  }
 
-.btn-light {
-  border: solid 1px #1E98D7;
-}
+  /* WOW */
 
-.btn-info:hover {
-  color: white;
-  background-color: #c00;
-}
+  /* Hojas de estilos para la web */
+  body {
+    background-color: #253347;
+    color: white;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  }
 
-.acceso {
-  padding: 2em;
-  text-align: end;
-}
+  .row {
+    padding: 0px;
+    margin: 10px 0;
+  }
 
-.acceso label {
-  max-width: 8.5rem;
-}
+  .carousel-item {
+    max-height: 40vh;
+  }
 
-.acceso button {
-  margin: .2em;
-  width: 12.3rem;
-}
+  .foto-carrusel {
+    width: 100%;
+  }
 
-.mejor-vuelo {
-  padding: 2em 1em;
-  text-align: right;
-}
+  .formulario-viaje-inicio {
+    background-color: #F2F2F2;
+    padding: 1em 0;
+    font-size: 14px;
+    margin: 2em 0;
+  }
 
-.mejor-vuelo button {
-  margin: .2em;
-  width: 12.3rem;
-}
+  .formulario-viaje-inicio h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
-.seccion-clara {
-  background-color: white;
-  color: #253347;
-}
+  .formulario-viaje-inicio label {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-/* Pie de página */
-footer {
-  margin-top: 1em;
-}
+  .formulario-origen-destino {
+    border: solid 2px #1E98D7;
+  }
 
-footer ul {
-  list-style: none;
-}
+  .formulario-origen-destino select {
+    width: 90%;
+  }
 
-footer li {
-  display: inline;
-  margin-left: 3em;
-}
-</style>
+  .btn-light {
+    border: solid 1px #1E98D7;
+  }
+
+  .btn-info:hover {
+    color: white;
+    background-color: #c00;
+  }
+
+  .acceso {
+    padding: 2em;
+    text-align: end;
+  }
+
+  .acceso label {
+    max-width: 8.5rem;
+  }
+
+  .acceso button {
+    margin: .2em;
+    width: 12.3rem;
+  }
+
+  .mejor-vuelo {
+    padding: 2em 1em;
+    text-align: right;
+  }
+
+  .mejor-vuelo button {
+    margin: .2em;
+    width: 12.3rem;
+  }
+
+  .seccion-clara {
+    background-color: white;
+    color: #253347;
+  }
+
+  /* Pie de página */
+  footer {
+    margin-top: 1em;
+  }
+
+  footer ul {
+    list-style: none;
+  }
+
+  footer li {
+    display: inline;
+    margin-left: 3em;
+  }
+}</style>

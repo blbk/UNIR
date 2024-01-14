@@ -1,16 +1,43 @@
+<script setup>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const isLoggedIn = computed(() => {
+  return store.getters.isLoggedIn;
+});
+
+const logout = () => {
+  store.commit('logout');
+};
+</script>
+
 <template>
-  <footer>
-    <div class="row">
-      <div class="col-3">
-        Inicio
-      </div>
-      <div class="col-9 text-end">
-        <ul>
-          <li>Condiciones</li>
-          <li>Quiénes somos</li>
-          <li>Política de protección de datos</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <header class="header">
+    <RouterLink to="/">Inicio</RouterLink>
+    <RouterLink to="/history">Acceder a mis viajes</RouterLink>
+    <a v-if="isLoggedIn" @click="logout">Logout</a>
+  </header>
 </template>
+
+<style scoped>
+.header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background-color: rgb(37, 51, 70);
+  padding: 1rem 0;
+
+  &>a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+</style>

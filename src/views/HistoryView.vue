@@ -1,26 +1,22 @@
 <script setup>
-import WelcomeItem from '@/components/WelcomeItem.vue';
+import ButtonComponent from '@/components/ButtonComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
+import CarrouselComponent from '@/components/CarrouselComponent.vue'
 </script>
 
 <template>
-    <WelcomeItem/>
+  <CarrouselComponent />
+
   <main>
-
     <div class="container-lg fondo">
-      <div class="row">
-        <tr>
-          <h1>
-            ¡Buenos días, María!
-          </h1>
-        </tr>
-        <tr>
-          <h2>
-            Estos son los últimos viajes con nosotros ¿Quieres repetir alguno?
-          </h2>
-        </tr>
-      </div>
+      <div class="row seccion-clara">
+        <h1>
+          ¡Buenos días, María!
+        </h1>
+        <h2>
+          Estos son los últimos viajes con nosotros ¿Quieres repetir alguno?
+        </h2>
 
-      <div class="container-fluid mi-container">
         <div class="row seccion-clara">
           <div class="col-8 justify-content-center align-items-center">
             <!-- Tabla -->
@@ -71,55 +67,30 @@ import WelcomeItem from '@/components/WelcomeItem.vue';
                 </tr>
               </tbody>
             </table>
+            <div class="row justify-content-center align-items-center">
+              <div class="col justify-content-right align-items-right">
+                <ButtonComponent value="Quiero buscar otras ofertas o destinos" color="light" />
+              </div>
+              <div class="col align-items-center justify-content-end">
+                <ButtonComponent value="¡Hazme una oferta de lo que QUIERO REPETIR!" />
+              </div>
+            </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="row justify-content-center align-items-center">
-              <button type="button" class="btn btn-light btn-cerrar-sesion">Cerrar Sesión</button>
+              <ButtonComponent value="Cerrar Sesión" color="light" />
             </div>
 
             <div class="row justify-content-center align-items-center">
-                <button type="button" class="btn btn-info">
-                  Reservar la Oferta del Día
-                </button>
+              <ButtonComponent value="Reservar la Oferta del Día" />
             </div>
 
           </div>
-          <div class="row justify-content-center align-items-center">
-            <div class="col justify-content-right align-items-right">
-              <button type="button" class="btn btn-cerrar-sesion btn-light">Quiero buscar otras ofertas o destinos</button>
-            </div>
-            <div class="col align-items-center justify-content-end">
-              <button type="button" class="btn btn-info btn-reservar-oferta">
-                ¡Hazme una oferta de lo que QUIERO REPETIR!
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
 
-      <footer>
-        <div class="row">
-          <div class="col-12 col-md-4 text-left">
-            Inicio &nbsp; > &nbsp; Oferta &nbsp; > &nbsp; <strong>Portal del usuario</strong> 
-            <!--
-            <ul>
-              <li>Inicio</li>
-              <li> > </li>
-              <li>Oferta</li>
-              <li> > </li>
-              <li>Portal del usuario</li>
-            </ul>
-            -->
-          </div>
-          <div class="col-12 col-md-8 text-end">
-            <ul>
-              <li>Condiciones</li>
-              <li>Quiénes somos</li>
-              <li>Política de protección de datos</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      <FooterComponent></FooterComponent>
     </div>
   </main>
 </template>

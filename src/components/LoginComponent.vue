@@ -2,6 +2,7 @@
 
 import { ref } from 'vue';
 import { useStore } from 'vuex';
+import ButtonComponent from './ButtonComponent.vue';
 
 const store = useStore();
 const shouldShow = ref(false);
@@ -19,10 +20,10 @@ function onSubmit(a) {
 </script>
 
 <template>
-  <a @click="toggleLoginPopup">Login</a>
+  <ButtonComponent @click="toggleLoginPopup" value="Quiero darme de alta" color="light" />
+  <!-- <a @click="toggleLoginPopup">Login</a> -->
 
   <div v-if="shouldShow" class="container">
-    <h1 class="text-center">Login</h1>
     <form v-on:submit.prevent="onSubmit">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
@@ -50,12 +51,7 @@ a {
 
 .container {
   padding: 1rem;
-  position: absolute;
-  right: 0;
   top: 3rem;
-  background: rgb(37, 51, 70);
-
-  border: 1px #1E98D7 solid;
   width: 20rem;
 }
 </style>
