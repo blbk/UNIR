@@ -95,7 +95,9 @@ store.commit('setTripInfo', tripInfo);
         <div class="col-12 col-md-6 col-lg-4">
           <section class="acceso">
             <label>¿Ya eres cliente?</label>
-            <ButtonComponent value="Acceder a mis viajes" color="info" />
+            <RouterLink to="/history">
+              <ButtonComponent value="Acceder a mis viajes" color="info" />
+            </RouterLink>
             <label>No soy cliente </label>
             <LoginComponent></LoginComponent>
           </section>
