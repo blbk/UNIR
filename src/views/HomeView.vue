@@ -1,24 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import ButtonComponent from '@/components/ButtonComponent.vue';
 import CarrouselComponent from '../components/CarrouselComponent.vue'
-import SelectComponent from '../components/SelectComponent.vue'
-import ButtonComponent from '../components/ButtonComponent.vue'
+import FindTripFormComponent from '@/components/FindTripFormComponent.vue';
 
-const originOptions = ref([
-  { value: null, text: 'Selecciona un origen' },
-  { value: '1', text: 'Madrid' },
-  { value: '2', text: 'Londres' },
-  { value: '3', text: 'París' },
-  { value: '4', text: 'Roma' },
-])
-
-const destinationOptions = ref([
-  { value: null, text: 'Selecciona un destino' },
-  { value: '1', text: 'Madrid' },
-  { value: '2', text: 'Londres' },
-  { value: '3', text: 'París' },
-  { value: '4', text: 'Roma' },
-])
 </script>
 
 <template>
@@ -31,25 +15,11 @@ const destinationOptions = ref([
           ¡Busca tu destino deseado<br>y nosotros encontraremos lo mejor para ti!
         </h1>
         <div class="row">
-          <div class="col-12 col-lg-8">
-            <form action="" class="formulario-origen-destino">
-
-              <SelectComponent label="Origen" :options="originOptions"></SelectComponent>
-              <SelectComponent label="Destino" :options="destinationOptions"></SelectComponent>
-
-              <div class="col-12 col-md-5">
-                <label for="fecha-ida">Fecha de ida</label>
-                <input type="date" id="fecha-ida">
-                <label for="fecha-vuelta">Fecha de vuelta</label>
-                <input type="date" id="fecha-vuelta">
-              </div>
-            </form>
-          </div>
+          <FindTripFormComponent></FindTripFormComponent>
           <div class="col-12 col-lg-4">
             <section class="mejor-vuelo">
-              <button type="button" class="btn btn-info">
-                Dime el mejor vuelo
-              </button>
+              <!-- <RouterLink to="/" -->
+              <ButtonComponent value="Ver mejor vuelo"></ButtonComponent>
               <img src="../assets/normal_u38.png" alt="Logotipo de reservueling" height="30px">
             </section>
           </div>
