@@ -1,21 +1,30 @@
 <script setup>
-import LoginComponent from './LoginComponent.vue'
+import LoginComponent from './LoginComponent.vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-// function toggleLoginPopup()  {
-//   console.log(`[LOG] open`);
+const store = useStore();
+console.log(`[LOG] store:`, store.state);
 
-// }
+const isLoggedIn = computed(() => {
+  console.log(`[LOG] isLoggedIn:`, store.state.loggedIn);
+  return store.getters.isLoggedIn;
+});
+
+const logout = () => {
+  store.commit('logout');
+};
 </script>
 
 <template>
   <header class="header">
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/history">History</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/register" class="align-right">Register</RouterLink>
-    <LoginComponent>
+    <RouterLink v-if="isLoggedIn" to="/history">History</RouterLink>
+    <RouterLink to="/about" class="align-left">About</RouterLink>
+    <RouterLink v-if="!isLoggedIn" to="/register" >Register</RouterLink>
+    <LoginComponent v-if="!isLoggedIn">
     </LoginComponent>
-    <!-- <a @click="toggleLoginPopup">Login</a> -->
+    <a v-if="isLoggedIn" @click="logout">Logout</a>
   </header>
 </template>
 
@@ -39,8 +48,8 @@ import LoginComponent from './LoginComponent.vue'
     }
   }
 
-  &>.align-right {
-    margin-left: auto;
+  &>.align-left {
+    margin-right: auto;
   }
 }
 </style>

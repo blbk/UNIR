@@ -1,7 +1,9 @@
 <script setup>
 
 import { ref } from 'vue';
+import { useStore } from 'vuex';
 
+const store = useStore();
 const shouldShow = ref(false);
 
 function toggleLoginPopup() {
@@ -11,6 +13,7 @@ function toggleLoginPopup() {
 
 function onSubmit(a) {
   console.log(`[LOG] submit`,a);
+  store.commit('login');
 }
 
 </script>

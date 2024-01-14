@@ -9,19 +9,32 @@ import { createStore } from 'vuex'
 const store = createStore({
   state() {
     return {
-      loggedIn: false,
+      isLoggedIn: false,
       user: null
+    }
+  },
+  getters: {
+    isLoggedIn(state) {
+      console.log(`[LOG] getter isLoggedIn`);
+      return state.isLoggedIn
+    },
+    user(state) {
+      console.log(`[LOG] getter user`);
+      return state.user
     }
   },
   mutations: {
     login(state) {
-      state.loggedIn = true
+      console.log(`[LOG] mutation login`);
+      state.isLoggedIn = true
     },
     setUser(state, user) {
+      console.log(`[LOG] mutation setUser`);
       state.user = user
     },
     logout(state) {
-      state.loggedIn = false
+      console.log(`[LOG] mutation logout`);
+      state.isLoggedIn = false
     }
   }
 })

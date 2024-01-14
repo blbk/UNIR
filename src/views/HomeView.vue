@@ -19,7 +19,9 @@ import FindTripFormComponent from '@/components/FindTripFormComponent.vue';
           <div class="col-12 col-lg-4">
             <section class="mejor-vuelo">
               <!-- <RouterLink to="/" -->
-              <ButtonComponent value="Ver mejor vuelo"></ButtonComponent>
+              <RouterLink to="/trip">
+                <ButtonComponent value="Ver mejor vuelo"></ButtonComponent>
+              </RouterLink>
               <img src="../assets/normal_u38.png" alt="Logotipo de reservueling" height="30px">
             </section>
           </div>
@@ -34,20 +36,6 @@ import FindTripFormComponent from '@/components/FindTripFormComponent.vue';
           </section>
         </div>
       </div>
-      <footer>
-        <div class="row">
-          <div class="col-3">
-            Inicio
-          </div>
-          <div class="col-9 text-end">
-            <ul>
-              <li>Condiciones</li>
-              <li>Quiénes somos</li>
-              <li>Política de protección de datos</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
     </div>
   </main>
 </template>
