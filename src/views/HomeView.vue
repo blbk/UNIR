@@ -27,14 +27,6 @@ import FindTripFormComponent from '@/components/FindTripFormComponent.vue';
           </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <section class="acceso">
-            <label>¿Ya eres cliente?</label>
-            <ButtonComponent value="Accede a mis viajes"></ButtonComponent><br>
-            <label>No soy cliente </label>
-            <ButtonComponent color="light" value="Quiero darme de alta"></ButtonComponent>
-          </section>
-        </div>
       </div>
     </div>
   </main>

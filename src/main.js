@@ -10,7 +10,13 @@ const store = createStore({
   state() {
     return {
       isLoggedIn: false,
-      user: null
+      user: null,
+      tripInfo: {
+        origin: '1',
+        destination: '2',
+        departureDate: "2024-01-01",
+        returnDate: "2024-01-02",
+      }
     }
   },
   getters: {
@@ -21,6 +27,10 @@ const store = createStore({
     user(state) {
       console.log(`[LOG] getter user`);
       return state.user
+    },
+    tripInfo(state) {
+      console.log(`[LOG] getter tripInfo`);
+      return state.tripInfo
     }
   },
   mutations: {
@@ -35,6 +45,10 @@ const store = createStore({
     logout(state) {
       console.log(`[LOG] mutation logout`);
       state.isLoggedIn = false
+    },
+    setTripInfo(state, tripInfo) {
+      console.log(`[LOG] mutation setTripInfo`);
+      state.tripInfo = tripInfo
     }
   }
 })
