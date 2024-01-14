@@ -1,7 +1,5 @@
 <script setup>
-// import ButtonComponent from '@/components/ButtonComponent.vue';
 import CarrouselComponent from '../components/CarrouselComponent.vue'
-// import FindTripFormComponent from '@/components/FindTripFormComponent.vue';
 import { ref } from 'vue'
 import SelectComponent from '../components/SelectComponent.vue'
 import { useStore } from 'vuex';
@@ -30,8 +28,8 @@ const destinationOptions = ref([
 const tripInfo = {
   origin: null,
   destination: null,
-  departureDate: null,
-  returnDate: null,
+  departureDate: "2024-01-01",
+  returnDate: "2024-01-15",
 }
 
 function setOrigin(value) {
@@ -55,7 +53,7 @@ store.commit('setTripInfo', tripInfo);
   <CarrouselComponent />
 
   <main>
-    
+
     <div class="container-lg">
       <div class="row seccion-clara">
         <div class="col-12 col-md-6 col-lg-8">
@@ -66,16 +64,18 @@ store.commit('setTripInfo', tripInfo);
             <div class="row">
               <div class="col-12 col-lg-8">
                 <form action="" class="formulario-origen-destino">
-                  <div class="row justify-content-between" >
+                  <div class="row justify-content-between">
                     <div class="col-12 col-md-7">
-                      <SelectComponent label="Origen" :options="originOptions" @change-value="setOrigin"></SelectComponent>
-                      <SelectComponent label="Destino" :options="destinationOptions" @change-value="setDestination"></SelectComponent>
+                      <SelectComponent label="Origen" :options="originOptions" @change-value="setOrigin">
+                      </SelectComponent>
+                      <SelectComponent label="Destino" :options="destinationOptions" @change-value="setDestination">
+                      </SelectComponent>
                     </div>
                     <div class="col-12 col-md-5">
                       <label for="fecha-ida">Fecha de ida</label>
-                      <input type="date" id="fecha-ida" @change="setDepartureDate">
+                      <input type="date" value="2024-01-01" id="fecha-ida" @change="setDepartureDate">
                       <label for="fecha-vuelta">Fecha de vuelta</label>
-                      <input type="date" id="fecha-vuelta" @change="setReturnDate">
+                      <input type="date" value="2024-01-15" id="fecha-vuelta" @change="setReturnDate">
                     </div>
                   </div>
                 </form>
@@ -96,7 +96,7 @@ store.commit('setTripInfo', tripInfo);
           <section class="acceso">
             <label>¿Ya eres cliente?</label>
             <ButtonComponent value="Acceder a mis viajes" color="info" />
-            <label>No soy cliente </label> 
+            <label>No soy cliente </label>
             <LoginComponent></LoginComponent>
           </section>
         </div>
@@ -108,11 +108,9 @@ store.commit('setTripInfo', tripInfo);
 </template>
 
 <style scoped>
-
 .formulario-viaje-inicio h1 {
   font-size: 24px;
   font-weight: bold;
   padding-left: 1rem;
 }
-
 </style>

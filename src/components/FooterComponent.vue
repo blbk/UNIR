@@ -24,9 +24,7 @@ const logout = () => {
 <style scoped>
 .header {
   display: flex;
-  position: fixed;
   width: 100%;
-  z-index: 2;
   background-color: rgb(37, 51, 70);
   padding: 1rem 0;
 

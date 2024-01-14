@@ -72,6 +72,12 @@ h3 {
   color: var(--color-heading);
 }
 
+body {
+  background-color: #253347;
+  color: white;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
 @media (min-width: 1024px) {
   .item {
     margin-top: 0;
@@ -118,11 +124,7 @@ h3 {
   /* WOW */
 
   /* Hojas de estilos para la web */
-  body {
-    background-color: #253347;
-    color: white;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  }
+
 
   .row {
     padding: 0px;
@@ -213,4 +215,5 @@ h3 {
     display: inline;
     margin-left: 3em;
   }
-}</style>
+}
+</style>

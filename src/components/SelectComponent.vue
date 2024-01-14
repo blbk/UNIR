@@ -14,6 +14,6 @@ function onChange() {
 <template>
   <label for="origen">{{ label }}</label>
   <select id="origen" class="form-select" aria-label="origen select" v-model="value" @change="onChange">
-    <option v-for="option in options" :value="option.value" :key="option.vlaue">{{ option.text }}</option>
+    <option v-for="option in options" :value="option.value" :key="option.value">{{ option.text }}</option>
   </select>
 </template>
